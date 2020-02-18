@@ -26,6 +26,10 @@ while True:
             y = landmarks.part(n).y
             cv2.circle(frame, (x, y), 4, (255, 0, 0), -1)
 
+        logo = cv2.imread('vsd.png')
+        point = (landmarks.part(27).x, landmarks.part(27).y)
+        frame[point[1]: point[1] + logo.shape[0], point[0] - 50: point[0] + logo.shape[1] - 50] = logo
+
 
     cv2.imshow("Frame", frame)
 
